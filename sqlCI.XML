@@ -1,0 +1,746 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>sqlCI</name>
+    </assembly>
+    <members>
+        <member name="M:RedGate.SQLCI.BuildCommandLineOptionsBuilder.#ctor(RedGate.SQLCI.CommandLineArgumentsParser,RedGate.SQLCI.ILocalDbInstanceProvider,RedGate.SQLCI.Engine.Interfaces.IDatabaseProvider,RedGate.Deploy.SQLCI.Shared.System.IFileSystem)">
+            <summary>
+            Creates a new instance with the specified dependencies.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.BuildCommandLineOptionsBuilder.IncludeDocs">
+            <summary>
+            Command line option to specify whether or not to include SQL Doc database documentation in the NuGet package
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.CaseInsensitiveOptionSet">
+            <summary>
+            Used to stop NDesk.Options being quite so picky about the case of the arguments.
+            </summary>
+        </member>
+        <member name="F:RedGate.SQLCI.CommandLineOption.IncludeDocs">
+            <summary>
+            Command line option to specify whether or not to include SQL Doc database documentation in the NuGet package
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.CommandLineOptionDependencies">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.ActivateLicenseSerialKey">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.AdditionalCompareArgs">
+            <summary>
+              Looks up a localized string similar to Optional.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.DatabaseName">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.DatabasePassword">
+            <summary>
+              Looks up a localized string similar to Optional. Required if you’re using SQL authentication. Not required if you’re using Windows authentication.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.DatabaseServer">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.DatabaseUserName">
+            <summary>
+              Looks up a localized string similar to Optional. Required if you’re using SQL authentication. Not required if you’re using Windows authentication.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.DlmDashboardHost">
+            <summary>
+              Looks up a localized string similar to Optional. Required if you want to send schema data to DLM Dashboard.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.DlmDashboardPort">
+            <summary>
+              Looks up a localized string similar to Optional. Required if you&apos;re using --dlmDashboardHost and not running DLM Dashboard on default port 19528.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.IncludeDocs">
+            <summary>
+              Looks up a localized string similar to Optional.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.LicenseSerialKey">
+            <summary>
+              Looks up a localized string similar to Optional.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.NugetFeedApiKey">
+            <summary>
+              Looks up a localized string similar to Optional.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.NugetFeedUrl">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.OutputFolder">
+            <summary>
+              Looks up a localized string similar to Optional. Set this if you want to specify a folder.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.Package">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.PackageId">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.PackageVersion">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.RunOnlyTest">
+            <summary>
+              Looks up a localized string similar to Optional.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.ScriptsFolder">
+            <summary>
+              Looks up a localized string similar to Required.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.SqlDataGenerator">
+            <summary>
+              Looks up a localized string similar to Optional.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.TemporaryDatabaseName">
+            <summary>
+              Looks up a localized string similar to Optional. If you do not specify a database name, SQL CI will create a scratch database.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDependencies.TemporaryDatabaseServer">
+            <summary>
+              Looks up a localized string similar to Optional. If you do not specify a server, SQL CI will attempt to use LocalDB.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.CommandLineOptionDescriptions">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.ActivateLicenseSerialKey">
+             <summary>
+               Looks up a localized string similar to This also activates SQL CI.  For help finding your serial number, see
+            http://documentation.red-gate.com/display/XX/Licensing
+            Separate multiple serial numbers with commas
+            without spaces..
+             </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.AdditionalCompareArgs">
+             <summary>
+               Looks up a localized string similar to Enter SQL Compare command line options or switches, for example:
+            --additionalCompareArgs=&quot;/options:IgnoreKeys&quot;
+            Arguments are also included if prefixed with a plus sign. To exclude default options, prefix the option name with a minus sign. For example:
+            --additionalCompareArgs=&quot;/options:-infr&quot;
+            Options are not case-sensitive, and aliases are supported. For more details, see
+            www.red-gate.com/sqlcompareoptions.
+             </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.DatabaseName">
+            <summary>
+              Looks up a localized string similar to The target database to update with the changes in source control. This must be an existing database on the server; the runner does not create the database for you..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.DatabasePassword">
+            <summary>
+              Looks up a localized string similar to .
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.DatabaseServer">
+             <summary>
+               Looks up a localized string similar to Target database server name, for example: 
+            --databaseServer= sql01.example.com\sql2008.
+             </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.DatabaseUserName">
+            <summary>
+              Looks up a localized string similar to .
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.DlmDashboardHost">
+            <summary>
+              Looks up a localized string similar to Enter the name or IP address of the machine hosting DLM Dashboard..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.DlmDashboardPort">
+            <summary>
+              Looks up a localized string similar to Enter the port number..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.IncludeDocs">
+            <summary>
+              Looks up a localized string similar to Specify this switch to include database documentation in the NuGet package..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.LicenseSerialKey">
+             <summary>
+               Looks up a localized string similar to For help finding your serial number, see http://documentation.red-gate.com/display/XX/Licensing
+            If you don’t enter a key, you’ll start a 28 day free trial.
+            Separate multiple serial numbers with commas without spaces..
+             </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.NugetFeedApiKey">
+            <summary>
+              Looks up a localized string similar to Ignore this if you’re using a public NuGet feed..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.NugetFeedUrl">
+            <summary>
+              Looks up a localized string similar to The URL of the NuGet feed to publish the package to..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.OutputFolder">
+            <summary>
+              Looks up a localized string similar to Ignore this if you want to default to the current working directory..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.Package">
+            <summary>
+              Looks up a localized string similar to Path to the package created in the BUILD step..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.PackageId">
+            <summary>
+              Looks up a localized string similar to Name of the NuGet package to create. The name must not contain spaces..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.PackageVersion">
+             <summary>
+               Looks up a localized string similar to For TeamCity, enter $(build.number)
+            For CruiseControl.NET, enter $(CCNetLabel)
+            For Bamboo, enter ${{bamboo.buildNumber}}
+            For TFS versions 2008 and earlier, enter $(BuildNumber)
+            For TFS versions 2010 and later, follow the instructions here: www.red-gate.com/buildnumbertfs
+            If you’re using a different build system, email support@red-gate.com for help.
+            When you’re using this through the command line, enter a number to set the build number manually..
+             </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.RunOnlyTest">
+             <summary>
+               Looks up a localized string similar to To run a single test, enter [testclass].[testname] 
+            Ignore this command if you want to run every test class by default..
+             </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.ScriptsFolder">
+            <summary>
+              Looks up a localized string similar to Path to the database scripts folder in source control. If it’s a path to the build VCS root, use a period: ’.’..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.SqlDataGenerator">
+            <summary>
+              Looks up a localized string similar to Optionally enter the path to a SQL Data Generator project file. The path must be relative to the VCS root..
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.TemporaryDatabaseName">
+            <summary>
+              Looks up a localized string similar to Your database will be recreated on this database.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionDescriptions.TemporaryDatabaseServer">
+             <summary>
+               Looks up a localized string similar to Your database will be recreated on this server. We recommend using LocalDB, for example:
+            --temporaryDatabaseServer=(localdb)\v11.0.
+             </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.CommandLineOptionLongNames">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.ActivateLicenseSerialKey">
+            <summary>
+              Looks up a localized string similar to DLM Automation Suite serial number.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.AdditionalCompareArgs">
+            <summary>
+              Looks up a localized string similar to SQL Compare command line arguments.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.DatabaseName">
+            <summary>
+              Looks up a localized string similar to Target database name.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.DatabasePassword">
+            <summary>
+              Looks up a localized string similar to SQL password.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.DatabaseServer">
+            <summary>
+              Looks up a localized string similar to Database server.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.DatabaseUserName">
+            <summary>
+              Looks up a localized string similar to Username for SQL authentication.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.DlmDashboardHost">
+            <summary>
+              Looks up a localized string similar to DLM Dashboard hostname.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.DlmDashboardPort">
+            <summary>
+              Looks up a localized string similar to DLM Dashboard port number.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.IncludeDocs">
+            <summary>
+              Looks up a localized string similar to Include database documentation in the NuGet package.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.LicenseSerialKey">
+            <summary>
+              Looks up a localized string similar to DLM Automation Suite serial number.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.NugetFeedApiKey">
+            <summary>
+              Looks up a localized string similar to NuGet feed API key.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.NugetFeedUrl">
+            <summary>
+              Looks up a localized string similar to NuGet feed URL.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.OutputFolder">
+            <summary>
+              Looks up a localized string similar to Path to the output folder.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.Package">
+            <summary>
+              Looks up a localized string similar to SQL CI package.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.PackageId">
+            <summary>
+              Looks up a localized string similar to NuGet package name.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.PackageVersion">
+            <summary>
+              Looks up a localized string similar to Build number.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.RunOnlyTest">
+            <summary>
+              Looks up a localized string similar to Test class or test to run.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.ScriptsFolder">
+            <summary>
+              Looks up a localized string similar to Database folder path.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.SqlDataGenerator">
+            <summary>
+              Looks up a localized string similar to Populate database with test data.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.TemporaryDatabaseName">
+            <summary>
+              Looks up a localized string similar to Temporary database name.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.CommandLineOptionLongNames.TemporaryDatabaseServer">
+            <summary>
+              Looks up a localized string similar to Temporary database server name.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.DatabaseInfo">
+            <summary>
+            Collection of details for connecting to a specific database on a server.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.DatabaseInfo.#ctor(System.String,RedGate.Deploy.SqlServerDbPackage.Shared.Impl.DatabaseServerAuthentication)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.Impl.SqlDoc.DatabaseInfo.Name">
+            <summary>
+            The name of the database.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.Impl.SqlDoc.DatabaseInfo.ServerAuthentication">
+            <summary>
+            The authetication details of the database's server.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.HtmlLoader">
+            <summary>
+            Default implementation of <see cref="T:RedGate.SQLCI.Impl.SqlDoc.IHtmlLoader"/>.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.IHtmlLoader">
+            <summary>
+            Used to load and save html files.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.IHtmlLoader.LoadHtml(System.String)">
+            <summary>
+            Load an HtmlDocument from the given path.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.IHtmlLoader.SaveHtml(HtmlAgilityPack.HtmlDocument,System.String)">
+            <summary>
+            Save the given HtmlDocument to the given path.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.HtmlLoader.#ctor(RedGate.Deploy.SQLCI.Shared.System.IFileSystem)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.ISqlDocHtmlRewriter">
+            <summary>
+            Testability interface for the operation of rewriting the HTML produced by SQL Doc, so that the database and server name
+            of the temporary database are replaced with the NuGet package name. Will also rename folders as necessary for this.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.ISqlDocHtmlRewriter.UpdateHtml(System.String,System.String,System.String)">
+            <summary>
+            Performs an in-place rewrite of the HTML produced by SQL Doc, to replace the database and server name of the
+            temporary database with the NuGet package name. Will also rename folders as necessary for this.
+            </summary>
+            <param name="docsFolderPath">The path of the folder containing the SQL Doc ouput.</param>
+            <param name="documentedServerName">The new name of the server in the report.</param>
+            <param name="documentedDatabaseName">The new name of the database in the report, typically derived from the NuGet package id.</param>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.ITreePageUpdater">
+            <summary>
+            Updates the given tree file with the new information.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.ITreePageUpdater.UpdateTreeView(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Update the given tree file with the new information.
+            </summary>
+            <param name="fileName">The file to update.</param>
+            <param name="newServerFolderName">The name of the new server folder.</param>
+            <param name="newDatabaseFolderName">The name of the new database folder.</param>
+            <param name="documentedServerName">The name of the new server.</param>
+            <param name="documentedDatabaseName">The name of the new database.</param>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.SqlDocHtmlRewriter">
+            <summary>
+            Default implementation of <see cref="T:RedGate.SQLCI.Impl.SqlDoc.ISqlDocHtmlRewriter"/>.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.SqlDocHtmlRewriter.#ctor(RedGate.Deploy.SQLCI.Shared.System.IFileSystem,RedGate.SQLCI.Impl.SqlDoc.IHtmlLoader,RedGate.SQLCI.Impl.SqlDoc.ITreePageUpdater)">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.TreePageUpdater">
+            <summary>
+            Default implementation of <see cref="T:RedGate.SQLCI.Impl.SqlDoc.ITreePageUpdater"/>.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.TreePageUpdater.#ctor(RedGate.SQLCI.Impl.SqlDoc.IHtmlLoader)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="htmlLoader"></param>
+        </member>
+        <member name="T:RedGate.SQLCI.ISqlToolLocator">
+            <summary>
+            Gets the location of sql tools.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.ISqlToolLocator.GetSqlCompareLocation">
+            <summary>
+            Get the location where SQLCompare.exe resides.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.ISqlToolLocator.GetSqlDataGeneratorLocation">
+            <summary>
+            Get the location where SQLDataGenerator.exe resides.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.ISqlToolLocator.GetSqlDocLocation">
+            <summary>
+            Get the location where SQLDoc.exe resides.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.SqlDocDatabaseDocumentor">
+            <summary>
+            Uses RedGate's SQL Doc to document the given database.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.SqlDocDatabaseDocumentor.#ctor(RedGate.SQLCI.Impl.SqlDoc.SqlDocWrapper,RedGate.SQLCI.Impl.SqlDoc.ISqlDocHtmlRewriter)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlDoc.SqlDocWrapper">
+            <summary>
+            Wraps the calling of SQLDoc.exe
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.SqlDocWrapper.#ctor(RedGate.SQLCI.ISqlToolLocator,RedGate.SQLCI.Engine.Interfaces.IProcessProvider,RedGate.SQLCI.Engine.Interfaces.IBuildSystem,RedGate.Deploy.SQLCI.Shared.System.IFileSystem)">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlDoc.SqlDocWrapper.GenerateDocumentation(RedGate.SQLCI.Impl.SqlDoc.DatabaseInfo,System.String,System.String)">
+            <summary>
+            Calls SQLDoc.exe to document the specified database.
+            </summary>
+            <param name="databaseInfo">Details of the database to document.</param>
+            <param name="documentedDatabaseName">The name of the database as it will appear in the documentation. (Normally the NuGet package Id)</param>
+            <param name="outputLocation">The root folder of the output documentation files. This will contain the root index.html file.</param>
+        </member>
+        <member name="T:RedGate.SQLCI.Resources.Product">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.Resources.Product.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.Resources.Product.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:RedGate.SQLCI.Resources.Product.SQL_CI_RGB_Red">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+            </summary>
+        </member>
+        <member name="F:RedGate.SQLCI.Impl.CompareArgumentCollection.s_CanonicalOptionNameLookup">
+            <summary>
+            Maps both the name and alias for each option to it's canonical (Upper camel case) name.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.Provider">
+            <summary>
+            Used to create a Data Generator process.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.Provider.#ctor(RedGate.SQLCI.Engine.Interfaces.IBuildSystem,RedGate.SQLCI.Engine.Interfaces.IProcessProvider,RedGate.SQLCI.ISqlToolLocator)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="buildSystem">Used for output.</param>
+            <param name="processProvider">Used to create the process that will be run.</param>
+            <param name="sqlToolLocator">Finds where SQLDataGenerator.exe is located.</param>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.Provider.CreateDataGenerator(RedGate.SQLCI.Engine.Interfaces.IDatabase,System.String)">
+            <summary>
+            Creates a Data generator process which fills a database with data.
+            </summary>
+            <param name="ciDatabase">The database to point data generator at.</param>
+            <param name="dataGeneratorProject">If not null, then use this data generator project file when generating data.
+            If it is null, then use the data generator defaults.</param>
+            <returns>Process which fills <paramref name="ciDatabase"/> with data according to <paramref name="dataGeneratorProject"/>.</returns>
+        </member>
+        <member name="F:RedGate.SQLCI.Impl.TeamCityTextOutputter.s_CharsThatNeedEscaping">
+            <remarks>
+            <see cref="F:RedGate.SQLCI.Impl.TeamCityTextOutputter.c_EscapeChar"/> must be first!
+            </remarks>
+        </member>
+        <member name="P:RedGate.SQLCI.msbuildTasks.SQLCIBuild.IncludeDocs">
+            <summary>
+            Represents whether or not to include documentation in the output NuGet package
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Parsing.ValidateFolderOrThrow(RedGate.Deploy.SQLCI.Shared.System.IFileSystem,System.String,System.String)">
+            <summary>
+            Validates that the specified folder exists.
+            </summary>
+            <param name="fileSystem">Provides access to the file-system.</param>
+            <param name="folderPath">The folder path to validate.</param>
+            <param name="parameterName">The name of the parameter being validated. Used for error messaging.</param>
+            <returns>The <paramref name="folderPath"/> parameter, to help with method chaining.</returns>
+            <exception cref="T:RedGate.SQLCI.Engine.SystemExitExceptions.InvalidCommandLineOptionsException">Raised if the directory referenced by <paramref name="folderPath"/>
+            doesn't exist, or is otherwise unavailable.</exception>
+        </member>
+        <member name="M:RedGate.SQLCI.Parsing.ParseSwitchOrThrow(System.String,System.String)">
+            <summary>
+            Parses the value for a switch 
+            </summary>
+            <param name="switchValue">The value of the switch if provided. Null otherwise</param>
+            <param name="parameterName">The name of the switch</param>
+            <returns>True if <paramref name="switchValue"/> is null or the value is true</returns>
+        </member>
+        <member name="T:RedGate.SQLCI.SqlToolLocator">
+            <summary>
+            Used to locate Compare and Data Generator exe's.
+            </summary>
+        </member>
+        <member name="F:RedGate.SQLCI.SqlToolLocator.ChildRootPath">
+            <summary>
+            The root location of where child folders of /sqlci/ would be found.
+            </summary>
+        </member>
+        <member name="F:RedGate.SQLCI.SqlToolLocator.SiblingRootPath">
+            <summary>
+            The root location of where sibling folders of /sqlci/ would be found.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.SqlToolLocator.#ctor(RedGate.Deploy.SQLCI.Shared.System.IFileSystem)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="fileSystem">Used to check if the exe's exist.</param>
+        </member>
+        <member name="M:RedGate.SQLCI.SqlToolLocator.GetSqlCompareLocation">
+            <summary>
+            Get the location where SQLCompare.exe resides.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.SqlToolLocator.GetSqlDataGeneratorLocation">
+            <summary>
+            Get the location where SQLDataGenerator.exe resides.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.SqlToolLocator.GetSqlDocLocation">
+            <summary>
+            Get the location where SQLDoc.exe resides.
+            </summary>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.CompareWrapper">
+            <summary>
+            Wraps calls to compare, and generates the arguments.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.CompareWrapper.#ctor(RedGate.SQLCI.Engine.Interfaces.IProcessProvider,RedGate.SQLCI.Engine.Interfaces.IBuildSystem,RedGate.SQLCI.ISqlToolLocator,RedGate.SQLCI.Engine.Interfaces.IDatabase,System.String,RedGate.Deploy.SqlServerDbPackage.Shared.Impl.DatabaseServerAuthentication,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)">
+            <summary>
+            Builds the arguments ready for compare to be executed.
+            </summary>
+            <param name="provider">Used to create the process that will be run.</param>
+            <param name="buildSystem">Used for output.</param>
+            <param name="sqlToolLocator">Finds where SQLCompare.exe is located.</param>
+            <param name="ciDatabase">The database to update.</param>
+            <param name="sourceScriptsFolder">The scripts folder <paramref name="ciDatabase"/> should be updated to.</param>
+            <param name="tempInstanceAuthentication">Tells compare to use this server for migrations if /tempInstance is not set.</param>
+            <param name="additionalArguments">Any extra arguments that should be passed to compare.</param>
+            <param name="userMessage">High level message to show the user.</param>
+            <param name="withTsqlt">Should tSQLt be explicitly included.</param>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.CompareWrapper.#ctor(RedGate.SQLCI.Engine.Interfaces.IProcessProvider,RedGate.SQLCI.Engine.Interfaces.IBuildSystem,RedGate.SQLCI.ISqlToolLocator,RedGate.SQLCI.Engine.Interfaces.IDatabase,System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.Boolean)">
+            <summary>
+            Builds the arguments ready for compare to be executed.
+            </summary>
+            <param name="provider">Used to create the process that will be run.</param>
+            <param name="buildSystem">Used for output.</param>
+            <param name="sqlToolLocator">Finds where SQLCompare.exe is located.</param>
+            <param name="ciDatabase">The database to update.</param>
+            <param name="sourceScriptsFolder">The scripts folder <paramref name="ciDatabase"/> should be updated to.</param>
+            <param name="additionalArguments">Any extra arguments that should be passed to compare.</param>
+            <param name="userMessage">High level message to show the user.</param>
+            <param name="withTsqlt">Should tSQLt be explicitly included.</param>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.CompareFactory">
+            <summary>
+            Factory for creating a SQL Compare process.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.CompareFactory.#ctor(RedGate.SQLCI.Engine.Interfaces.IProcessProvider,RedGate.SQLCI.Engine.Interfaces.IBuildSystem,RedGate.SQLCI.ISqlToolLocator)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="provider">Used to create a process.</param>
+            <param name="buildSystem">Used for output.</param>
+            <param name="sqlToolLocator">Used to find where compare.exe is.</param>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.DataGenerator">
+            <summary>
+            Used to wrap calls to Data Generator for filling a database with data.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.DataGenerator.#ctor(RedGate.SQLCI.Engine.Interfaces.IProcessProvider,RedGate.SQLCI.Engine.Interfaces.IBuildSystem,RedGate.SQLCI.ISqlToolLocator,RedGate.SQLCI.Engine.Interfaces.IDatabase,System.String)">
+            <summary>
+            Builds the arguments ready for data generator to be executed.
+            </summary>
+            <param name="provider">Used to create the process that will be run.</param>
+            <param name="buildSystem">Used for output.</param>
+            <param name="sqlToolLocator">Finds where SQLDataGenerator.exe is located.</param>
+            <param name="ciDatabase">The database to point data generator at.</param>
+            <param name="dataGeneratorProject">If not null, then use this data generator project file when generating data.
+            If it is null, then use the data generator defaults.</param>
+        </member>
+        <member name="T:RedGate.SQLCI.Impl.SqlToolsActivator">
+            <summary>
+            Activates SQL CI on this machine using by activating SQL Compare.
+            </summary>
+        </member>
+        <member name="M:RedGate.SQLCI.Impl.SqlToolsActivator.#ctor(RedGate.SQLCI.Engine.Interfaces.IProcessProvider,RedGate.SQLCI.Engine.Interfaces.IBuildSystem,RedGate.SQLCI.ISqlToolLocator)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="provider">Used to create the process that will be run.</param>
+            <param name="buildSystem">Used for output.</param>
+            <param name="sqlToolLocator">Finds where SQLDataGenerator.exe is located.</param>
+        </member>
+        <member name="M:RedGate.SQLCI.Program.Main(System.String[])">
+            <remarks>
+            We'd like to set <seealso cref="T:SmartAssembly.Attributes.DoNotCaptureVariablesAttribute"/> here, but SA-1624 means that we can't.
+            </remarks>        
+        </member>
+    </members>
+</doc>
